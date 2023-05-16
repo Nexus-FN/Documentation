@@ -1,0 +1,29 @@
+# User
+
+#### Getting a user from the database
+
+TypeScript will automatically infer the type of the user object, which makes it easier to understand which keys are available as well as what values the output will have.
+
+Keys are the column names in the database, values are the values in the database.
+
+Possible keys are:
+- accountId
+- username
+- email
+- createdAt
+- discordId
+
+###### Example:
+
+```typescript
+const user = await momentum.getUser("username", "Zetax");
+
+console.log(user.username)
+```
+
+#### Updating a user in the database. Same keys as above.
+```typescript
+const updatedUser = await momentum.updateUser("username", "Zetax", "email", "newemail@gmail.com");
+
+console.log(updatedUser.email)
+```

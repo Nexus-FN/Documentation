@@ -1,0 +1,43 @@
+### Installation using Docker
+
+While the installation may look hard and complex, it's actually really simple and takes about 5-10 minutes, I will make a Youtube Tutorial about it soon though.
+
+#### Requirements
+
+- Upstash Redis (Optional but recommended) [Find out how to create a redis database here](https://docs.upstash.com/redis), it's really simple.
+- NodeJS Download [here](https://nodejs.org/en)
+- NPM (Automatically installed when installing NodeJS)
+- Discord Bot [Create one here](https://discord.com/developers/)
+- Cloudflare R2 Bucket / S3 Bucket (Soon Optional) [Find out how to create one here](https://developers.cloudflare.com/r2/get-started/)
+
+#### Using Docker (Recommended)
+
+Create an `.env` file with the following contents:
+
+```env
+MONGO_URI="mongodb://yourmonguri"
+S3_BUCKET_NAME="yourbucketname"
+S3_ENDPOINT="https://yourbucketendpoint"
+S3_ACCESS_KEY_ID="youraccesskeyid"
+S3_SECRET_ACCESS_KEY="yoursecretaccesskey"
+INFO_UID="Name it whatever you want (But no spaces!), eg. Momentum"
+BOT_TOKEN="Your discord bot token"
+CLIENT_ID="Your discord bot client id"
+GUILD_ID="Your discord guild id"
+GLOBALCHATENABLED="true"
+NAME="Name it whatever you want (But no spaces!), eg. Momentum"
+USE_REDIS="true"
+REDIS_TOKEN="Your upstash token"
+```
+
+Pull the Docker image using the following command:
+
+```bash
+docker pull ghcr.io/nexus-fn/momentum
+```
+
+Then run the Docker image using the following command:
+
+```bash
+docker run -d -p 8080:8080 80:80 nexus-fn/momentum --env-file .env
+```

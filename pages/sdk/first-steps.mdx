@@ -1,0 +1,40 @@
+# First steps for the SDK
+
+The SDK is written in TypeScript, but can be used in any JavaScript project. It is recommended to use TypeScript, as it will provide you with type definitions and a better development experience.
+
+## Installation
+
+### Install the SDK with the Node Package Manager of your choice
+
+```bash
+npm install momentumsdk
+pnpm install momentumsdk
+yarn add momentumsdk
+```
+
+### Import the SDK
+
+```typescript
+import Momentum from 'momentumsdk';
+```
+
+### Generate a new API key
+
+Execute the `/createkey` command in your Discord server to generate a new API key. It will be sent to you in a ephemeral message, so only you can see it. If you lose it, you can always generate a new one.
+### Create a new instance of the SDK
+
+```typescript
+import Momentum from 'momentumsdk';
+
+const momentum = new Momentum({
+    url: "https://apollo.nexusfn.net/api/", //Replace with your own URL
+    apikey: "APIKEY" //Replace with your own generated API key
+});
+```
+
+Great job! You've now installed the SDK and created a new instance of it. Now you can start using the SDK to interact with the API.
+
+### Next steps
+
+[User](sdk/user.md)
+[Profile](sdk/profile.md)
