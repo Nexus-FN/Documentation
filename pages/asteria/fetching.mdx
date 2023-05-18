@@ -1,0 +1,34 @@
+# Fetching
+
+Fetching data from the API with Asteria is pretty simple, it works just like this:
+
+```ts
+import Asteria from 'asteriasdk';
+
+const asteria = new Asteria({
+  collectAnonStats: true // Allows us to gather some usage data for improvments
+  usedURL: "https://api.asteria.nexusfn.net" // This setting is only optional, but you can provide your own api if you'd like, it will have to be 1:1 with ours though
+  throwErrors: true //Enables/Disables error throwing. This setting is optional
+})
+
+Available keys:
+- name
+- id
+- description
+
+//Getting a cosmetic by name
+const cosmetic = await asteria.getCosmetic("name", "Black Knight", false); //The first argument is the key, the second is the value of your key
+
+console.log(`Cosmetic is ${cosmetic.name}`) // --> "Cosmetic is Black Knight"
+
+//The same way goes for every other function
+
+const poi = await asteria.getPoi("name", "MEGA CITY", false); //The first argument is the key, the second is the value of your key
+
+console.log(`POI is ${poi.name}`) // --> "Playlist is MEGA CITY"
+
+const playlist = await asteria.getPlaylist("name", "Solo", false); //The first argument is the key, the second is the value of your key
+
+console.log(`Playlist id is ${playlist.id}`) // --> "Playlist id is XXX"
+
+```
