@@ -39,5 +39,5 @@ docker pull ghcr.io/nexus-fn/momentum
 Then run the Docker image using the following command:
 
 ```bash
-docker run -d -p 8080:8080 80:80 nexus-fn/momentum --env-file .env
+docker run -d -p 8080:8080 -p 80:80 --env-file .env nexus-fn/momentum:main
 ```
