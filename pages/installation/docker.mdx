@@ -15,19 +15,27 @@ While the installation may look hard and complex, it's actually really simple an
 Create an `.env` file with the following contents:
 
 ```env
-MONGO_URI="mongodb://yourmonguri"
-S3_BUCKET_NAME="yourbucketname"
-S3_ENDPOINT="https://yourbucketendpoint"
-S3_ACCESS_KEY_ID="youraccesskeyid"
-S3_SECRET_ACCESS_KEY="yoursecretaccesskey"
-INFO_UID="Name it whatever you want (But no spaces!), eg. Momentum"
-BOT_TOKEN="Your discord bot token"
-CLIENT_ID="Your discord bot client id"
-GUILD_ID="Your discord guild id"
-GLOBALCHATENABLED="true"
-NAME="Name it whatever you want (But no spaces!), eg. Momentum"
-USE_REDIS="true"
-REDIS_TOKEN="Your upstash token"
+MONGO_URI="mongodb://127.0.0.1/momentum" # Should be the connection URI for your MongoDB database.
+BOT_TOKEN="" # The token for your Discord bot.
+CLIENT_ID="" # The client ID for your Discord bot.
+GUILD_ID="" # Your Discord servers guild ID
+GLOBALCHAT_ENABLED=true # Set to true if you want to enable global chat.
+NAME="" # The name of your backend. Name it anything you want. Dont use special characters or spaces.
+PORT=8080 # The port you want your backend to run on.
+GAME_SERVERS="127.0.0.1:8080_192.168.178:7777" # The IP addresses of your game servers. Separate them with underscores (_) !IMPORTANT!
+ALLOW_REBOOT=true # Set to true if you want to allow the reboot launcher to be able to use auto login for headless game servers
+
+# Advanced settings below (only change if you know what you're doing)
+
+MATCHMAKER_IP="127.0.0.1:80" # The URL for your matchmaker.
+USE_S3=false # Set to true if you want to use S3 for file storage. Requires more setup
+S3_BUCKET_NAME="" # The name of your S3 bucket. Only needed if USE_S3 is true.
+S3_ENDPOINT="" # The endpoint of your S3 bucket. Only needed if USE_S3 is true.
+S3_ACCESS_KEY_ID="" # The access key ID for your S3 bucket. Only needed if USE_S3 is true.
+S3_SECRET_ACCESS_KEY="" # The secret access key for your S3 bucket. Only needed if USE_S3 is true.
+USE_REDIS = false # Set to true if you want to use Redis for caching and token storing. Requires more setup
+REDIS_TOKEN = "" # The token for your Redis database. Only needed if USE_REDIS is true.
+REDIS_URL = "" # The URL for your Redis database. Only needed if USE_REDIS is true.
 ```
 
 Pull the Docker image using the following command:
